@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, sum = 0;
+    scanf("%d", &N);  // Input number
+    
+    for(i = 1; i < N; i++) {
+        if(i % 3 == 0 || i % 5 == 0)
+            sum += i;
+    }
+    
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+
+
+Output:
+Input: 10
+Multiples: 3, 5, 6, 9
+Sum = 23

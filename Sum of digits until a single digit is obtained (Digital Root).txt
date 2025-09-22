@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cin >> n;   // Input number
+    
+    while(n > 9) {   // repeat until single digit
+        sum = 0;
+        while(n > 0) {
+            sum += n % 10;
+            n = n / 10;
+        }
+        n = sum;   // update number with sum of digits
+    }
+    
+    cout << "Single digit sum = " << n << endl;
+    return 0;
+}
+
+Output:
+Input: 9875
+Step 1: 9+8+7+5 = 29
+Step 2: 2+9 = 11
+Step 3: 1+1 = 2
+Single digit sum = 2

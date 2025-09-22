@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int i = 2;
+    int m = n;
+
+    if (n % 2 == 0)
+    {
+        cout << 2 << " ";
+        while (n % 2 == 0)
+            n /= 2;
+    }
+
+    if (n % 3 == 0)
+    {
+        cout << 3 << " ";
+        while (n % 3 == 0)
+            n /= 3;
+    }
+
+    int q = int(sqrt(n));
+    for (i = 5; i <= q; i += 2)
+    {
+        if (n % i == 0)
+        {
+            cout << i << " ";
+            while (n % i == 0)
+                n /= i;
+        }
+    }
+
+    if (n > 1)
+        cout << n;
+
+    return 0;
+}
+
+
+Input:
+For n = 840:
+Prime factorization = 2, 3, 5, 7
+Output: 2 3 5 7

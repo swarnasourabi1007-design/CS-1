@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= n; i++) {
+        int f = 0;
+
+        if (i == 2 || i == 3) {
+            f = 0;
+        } else if (i % 2 == 0 || i % 3 == 0) {
+            f = 1;
+        } else {
+            for (int j = 5; j * j <= i; j += 6) {
+                if (i % j == 0 || i % (j + 2) == 0) {
+                    f = 1;
+                    break;
+                }
+            }
+        }
+
+        if (f == 0) {
+            printf("%d ", i);
+            count++;
+        }
+    }
+
+    printf("\nTotal Prime Numbers up to %d = %d\n", n, count);
+
+    return 0;
+}
+
+
+Output:
+Enter n: 20
+2 3 5 7 11 13 17 19 
+Total Prime Numbers up to 20 = 8

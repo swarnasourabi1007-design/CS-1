@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    if (n == 0 || n == 1) {
+        cout << "true";
+        return 0;
+    }
+
+    int a = 0, b = 1, c;
+    while (b < n) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    if (b == n)
+        cout << "true";
+    else
+        cout << "false";
+
+    return 0;
+}
+
+
+
+Input:
+13
+Output:
+true
