@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a, b, c = 0;
+    cin >> a >> b;
+    int mx = max(a, b), mn = min(a, b);
+
+    while (mx != mn) {
+        int d = mx - mn;
+        c++;
+        mx = max(mn, d);
+        mn = min(mn, d);
+    }
+
+    cout << c;
+    return 0;
+}
+
+
+Output:
+| Input (a, b) | Steps (c) |
+| ------------ | --------- |
+| 6 2          | 2         |
+| 5 2          | 2         |
+| 5 5          | 5         |
+| 3 2          | 3         |
+| 2 2          | 2         |
