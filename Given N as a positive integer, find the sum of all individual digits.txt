@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int N, sum = 0, rem;
+    scanf("%d", &N);  // Input number
+    
+    while(N > 0) {
+        rem = N % 10;   // extract last digit
+        sum += rem;     // add to sum
+        N = N / 10;     // remove last digit
+    }
+    
+    printf("Sum of digits = %d\n", sum);
+    return 0;
+}
+
+
+Output:
+Input: 1234
+Digits: 1 + 2 + 3 + 4 = 10
+Sum of digits = 10
